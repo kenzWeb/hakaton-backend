@@ -1,105 +1,15 @@
-import {Menu, Phone, X} from 'lucide-react'
-import {useState} from 'react'
-import {Link} from 'react-router-dom'
+import {ContactForm} from '../components/ContactForn'
+import {Features} from '../components/Features'
+import {Hero} from '../components/Hero'
+import {Services} from '../components/Servies'
 
-export function Header() {
-	const [isMenuOpen, setIsMenuOpen] = useState(false)
-
+export function HomePage() {
 	return (
-		<header className='bg-white shadow-md'>
-			<div className='container mx-auto px-4 py-4'>
-				<div className='flex items-center justify-between'>
-					<Link to='/' className='flex items-center space-x-2'>
-						<span className='text-2xl font-bold text-blue-600'>BuildPro</span>
-					</Link>
-
-					<nav className='hidden md:flex space-x-8'>
-						<Link
-							to='/'
-							className='text-gray-600 hover:text-blue-600 transition-colors font-medium'
-						>
-							Главная
-						</Link>
-						<Link
-							to='/services'
-							className='text-gray-600 hover:text-blue-600 transition-colors font-medium'
-						>
-							Услуги
-						</Link>
-						<Link
-							to='/about'
-							className='text-gray-600 hover:text-blue-600 transition-colors font-medium'
-						>
-							О компании
-						</Link>
-						<Link
-							to='/contact'
-							className='text-gray-600 hover:text-blue-600 transition-colors font-medium'
-						>
-							Контакты
-						</Link>
-					</nav>
-
-					<div className='hidden md:flex items-center space-x-4'>
-						<a
-							href='tel:+71234567890'
-							className='flex items-center space-x-2 text-gray-600 hover:text-blue-600'
-						>
-							<Phone size={20} />
-							<span>+7 (123) 456-7890</span>
-						</a>
-					</div>
-
-					<button
-						className='md:hidden'
-						onClick={() => setIsMenuOpen(!isMenuOpen)}
-					>
-						{isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-					</button>
-				</div>
-
-				{isMenuOpen && (
-					<div className='md:hidden mt-4 py-4 border-t'>
-						<nav className='flex flex-col space-y-4'>
-							<Link
-								to='/'
-								className='text-gray-600 hover:text-blue-600 transition-colors font-medium'
-								onClick={() => setIsMenuOpen(false)}
-							>
-								Главная
-							</Link>
-							<Link
-								to='/services'
-								className='text-gray-600 hover:text-blue-600 transition-colors font-medium'
-								onClick={() => setIsMenuOpen(false)}
-							>
-								Услуги
-							</Link>
-							<Link
-								to='/about'
-								className='text-gray-600 hover:text-blue-600 transition-colors font-medium'
-								onClick={() => setIsMenuOpen(false)}
-							>
-								О компании
-							</Link>
-							<Link
-								to='/contact'
-								className='text-gray-600 hover:text-blue-600 transition-colors font-medium'
-								onClick={() => setIsMenuOpen(false)}
-							>
-								Контакты
-							</Link>
-							<a
-								href='tel:+71234567890'
-								className='flex items-center space-x-2 text-gray-600 hover:text-blue-600'
-							>
-								<Phone size={20} />
-								<span>+7 (123) 456-7890</span>
-							</a>
-						</nav>
-					</div>
-				)}
-			</div>
-		</header>
+		<>
+			<Hero />
+			<Features />
+			<Services />
+			<ContactForm />
+		</>
 	)
 }
