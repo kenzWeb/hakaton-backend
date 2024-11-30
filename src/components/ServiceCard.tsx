@@ -1,5 +1,5 @@
 import {motion} from 'framer-motion'
-import {Service} from '../types/types'
+import {Service} from '../shares/types/types'
 
 interface ServiceCardProps {
 	service: Service

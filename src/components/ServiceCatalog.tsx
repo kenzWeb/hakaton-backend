@@ -2,10 +2,10 @@ import {motion} from 'framer-motion'
 import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useServices} from '../hooks/useServices'
-import {RootState} from '../store'
-import {setCategory, setSortOption} from '../store/slices/filterSlice'
 
-import {CategoryFilter, SortOption} from '../types/types'
+import {RootState} from '../shares/store'
+import {setCategory, setSortOption} from '../shares/store/slices/filterSlice'
+import {CategoryFilter, SortOption} from '../shares/types/types'
 import {ServiceCard} from './ServiceCard'
 import {ServiceCardSkeleton} from './ServiceCardSkeleton'
 import {ServiceFilters} from './ServiceFilters'
@@ -85,10 +85,8 @@ export function ServicesCatalog() {
 
 				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 					{isFiltering
-						? // Show skeletons while filtering
-						  [...Array(6)].map((_, i) => <ServiceCardSkeleton key={i} />)
-						: // Show actual services with animation
-						  services.map((service, index) => (
+						? [...Array(6)].map((_, i) => <ServiceCardSkeleton key={i} />)
+						: services.map((service, index) => (
 								<motion.div
 									key={service.id}
 									initial={{opacity: 0, y: 20}}

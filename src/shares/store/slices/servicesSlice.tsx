@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 
-import {services as initialServices} from '../../data/services'
 import {Service} from '../../types/types'
+import { services } from '../../../data/services'
 
 interface ServicesState {
 	items: Service[]
@@ -10,7 +10,7 @@ interface ServicesState {
 }
 
 const initialState: ServicesState = {
-	items: initialServices,
+	items: services,
 	loading: false,
 	error: null,
 }

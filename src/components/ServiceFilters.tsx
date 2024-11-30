@@ -1,5 +1,5 @@
-import { categories } from '../data/services'
-import {CategoryFilter, SortOption} from '../types/types'
+import {categories} from '../data/services'
+import {CategoryFilter, SortOption} from '../shares/types/types'
 
 interface ServiceFiltersProps {
 	selectedCategory: CategoryFilter

@@ -1,6 +1,7 @@
+import { RootState } from '@/shares/store'
 import {useMemo} from 'react'
 import {useSelector} from 'react-redux'
-import {RootState} from '../store'
+
 
 export const useServices = () => {
 	const services = useSelector((state: RootState) => state.services.items)

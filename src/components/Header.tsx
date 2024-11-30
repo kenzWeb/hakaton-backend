@@ -1,6 +1,8 @@
+import {getAccessToken} from '@/services/auth/auth-token.service'
 import {Menu, Phone, X} from 'lucide-react'
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
+import {Button} from './ui/button'
 
 export function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -49,6 +51,14 @@ export function Header() {
 							<span>+7 (123) 456-7890</span>
 						</a>
 					</div>
+
+					{getAccessToken() && (
+						<Link to='/profile'>
+							<Button variant='outline'>
+								<span>Профиль</span>
+							</Button>
+						</Link>
+					)}
 
 					<button
 						className='md:hidden'
