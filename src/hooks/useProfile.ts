@@ -1,9 +1,8 @@
-// import {userService} from '@/services/user.service'
-// import {IAuthForm} from '@/shares/types/auth.interface'
-// import {useMutation} from '@tanstack/react-query'
-// import {SubmitHandler, useForm} from 'react-hook-form'
+// import { userService } from '@/services/user.service'
+// import { IAuthForm } from '@/shares/types/auth.interface'
+// import { useForm } from 'react-hook-form'
 // import toast from 'react-hot-toast'
-// import {useNavigate} from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 // export function useAuthForm(isReg: boolean) {
 // 	const navigate = useNavigate()

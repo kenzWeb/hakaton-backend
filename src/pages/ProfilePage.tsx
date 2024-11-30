@@ -1,7 +1,14 @@
-export default function ProfilePage() {
-	return <div>
-		<h1>Profile</h1>
+import {authService} from '@/services/auth/auth.service'
+import {useQuery} from '@tanstack/react-query'
 
-		<h2></h2>
-	</div>
+export default function ProfilePage() {
+	const {data} = useQuery({
+		queryKey: ['profile'],
+		queryFn: () => authService,
+	})
+	return (
+		<div>
+			<h2></h2>
+		</div>
+	)
 }

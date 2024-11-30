@@ -52,10 +52,16 @@ export function Header() {
 						</a>
 					</div>
 
-					{getAccessToken() && (
+					{(getAccessToken() && (
 						<Link to='/profile'>
 							<Button variant='outline'>
 								<span>Профиль</span>
+							</Button>
+						</Link>
+					)) || (
+						<Link to='/auth'>
+							<Button variant='outline'>
+								<span>Войти</span>
 							</Button>
 						</Link>
 					)}
